@@ -144,9 +144,9 @@ int main(int argc, char** argv)
 		dstBlocks.push_back(Point2f(787,545));
 		dstBlocks.push_back(Point2f(787,413));
 		dstBlocks.push_back(Point2f(920,413));
-    cv::Size dstSize(templateW, templateH);
-    Mat warp_mat = getAffineTransform(&srcBlocks.front(), &dstBlocks.front());
-    warpAffine(srcImg, dstColorImg, warp_mat, dstSize, INTER_CUBIC);
+                cv::Size dstSize(templateW, templateH);
+                Mat warp_mat = getAffineTransform(&srcBlocks.front(), &dstBlocks.front());
+                warpAffine(srcImg, dstColorImg, warp_mat, dstSize, INTER_CUBIC);
 		char save_img_name[1024];
 		_snprintf_s(save_img_name, 1024, "%s\\%08d.jpg", argv[2], i);
 		imwrite(save_img_name, dstColorImg);
